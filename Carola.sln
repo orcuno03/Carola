@@ -7,6 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Carola.EntityLayer", "Carol
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Carola.DataAccessLayer", "Carola.DataAccessLayer\Carola.DataAccessLayer.csproj", "{6D2C4B14-5CF6-45B6-9EF2-89F9936D44BD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Carola.BusinessLayer", "Carola.BusinessLayer\Carola.BusinessLayer.csproj", "{2766C900-2081-4523-A815-F1E0DFCD228F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Carola.WebUI", "Carola.WebUI\Carola.WebUI.csproj", "{D20BAD01-9E16-452A-BBE1-C4BF2C91754C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +25,14 @@ Global
 		{6D2C4B14-5CF6-45B6-9EF2-89F9936D44BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6D2C4B14-5CF6-45B6-9EF2-89F9936D44BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6D2C4B14-5CF6-45B6-9EF2-89F9936D44BD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2766C900-2081-4523-A815-F1E0DFCD228F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2766C900-2081-4523-A815-F1E0DFCD228F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2766C900-2081-4523-A815-F1E0DFCD228F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2766C900-2081-4523-A815-F1E0DFCD228F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D20BAD01-9E16-452A-BBE1-C4BF2C91754C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D20BAD01-9E16-452A-BBE1-C4BF2C91754C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D20BAD01-9E16-452A-BBE1-C4BF2C91754C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D20BAD01-9E16-452A-BBE1-C4BF2C91754C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

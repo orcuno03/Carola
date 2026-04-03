@@ -5,10 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 using Carola.EntityLayer.Entities;
 
-namespace Carola.DataAccessLayer.Abstract
+namespace Carola.BusinessLayer.Abstract
 {
-    public interface ICarDal : IGenericDal<Car>
+    public interface ICustomerService : IGenericService<Customer>
     {
-        Task<List<Car>> GetAllCarsWithCategoryAsync();
     }
 }
