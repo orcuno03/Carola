@@ -6,16 +6,19 @@ using System.Threading.Tasks;
 using Carola.BusinessLayer.Abstract;
 using Carola.DataAccessLayer.Abstract;
 using Carola.EntityLayer.Entities;
+using FluentValidation;
 
 namespace Carola.BusinessLayer.Concrete
 {
     public class BrandManager : IBrandService
     {
         private readonly IBrandDal _brandDal;
+        private readonly IValidator<Brand> _validator;
 
-        public BrandManager(IBrandDal brandDal)
+        public BrandManager(IBrandDal brandDal, IValidator<Brand> validator)
         {
             _brandDal = brandDal;
+            _validator = validator;
         }
 
         public async Task TDeleteAsync(int id)
@@ -35,16 +38,9 @@ namespace Carola.BusinessLayer.Concrete
 
         public async Task TInsertAsync(Brand entity)
         {
-            if (string.IsNullOrWhiteSpace(entity.BrandName))
-                throw new Exception("Marka adı boş olamaz");
-
-            if (entity.BrandName.Length < 2)
-                throw new Exception("Marka adı en az 3 karakter olmalıdır");
-
-            var brands = await _brandDal.GetAllAsync();
-
-            if (brands.Any(x => x.BrandName == entity.BrandName))
-                throw new Exception("Bu marka zaten mevcut");
+            var result = await _validator.ValidateAsync(entity);
+            if(!result.IsValid)
+                throw new ValidationException(result.Errors);
 
             await _brandDal.InsertAsync(entity);
         }

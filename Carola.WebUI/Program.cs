@@ -1,8 +1,12 @@
 using Carola.BusinessLayer.Abstract;
 using Carola.BusinessLayer.Concrete;
+using Carola.BusinessLayer.Mapping;
+using Carola.BusinessLayer.ValidationRules;
 using Carola.DataAccessLayer.Abstract;
 using Carola.DataAccessLayer.Concrete;
 using Carola.DataAccessLayer.EntityFramework;
+using Carola.EntityLayer.Entities;
+using FluentValidation;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -17,6 +21,16 @@ builder.Services.AddScoped<ICarDal, EfCarDal>();
 
 builder.Services.AddScoped<ICategoryService, CategoryManager>();
 builder.Services.AddScoped<ICategoryDal, EfCategoryDal>();
+
+builder.Services.AddScoped<ILocationService, LocationManager>();
+builder.Services.AddScoped<ILocationDal, EfLocationDal>();
+
+builder.Services.AddScoped<ICustomerService, CustomerManager>();
+builder.Services.AddScoped<ICustomerDal, EfCustomerDal>();
+
+builder.Services.AddAutoMapper(typeof(GeneralMapping));
+
+builder.Services.AddScoped<IValidator<Brand>, BrandValidator>();
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
